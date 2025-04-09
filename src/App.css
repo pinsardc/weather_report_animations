@@ -7,14 +7,31 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+.App-sun {
+  height: 40vmin;
+}
+
+.App-moon {
+  height: 40vmin;
+  z-index: 3;
+  /* filter: brightness(10%); */
+}
+
+.App-clouds {
+  width: 120vw;
+  position: absolute;
+  z-index: 10;
+  top: -900px;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
+
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,17 +39,197 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-color: #61dafb;
+  z-index: -2;
+}
+
+.day {
+  background-color: #ADD8E6;
+}
+
+.night {
+  background-color: #0c0c30;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-sun {
+    /* animation: App-logo-spin infinite 20s linear; */
+    /* animation: App-logo-spin infinite 1s, App-logo-grow infinite 1s; */
+    animation: spin infinite 3s linear;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-sun-container {
+    /* animation: App-logo-spin infinite 20s linear; */
+    /* animation: App-logo-spin infinite 1s, App-logo-grow infinite 1s; */
+    animation: scale infinite .7s ease-in-out;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-sun-container2 {
+    /* animation: App-logo-spin infinite 20s linear; */
+    /* animation: App-logo-spin infinite 1s, App-logo-grow infinite 1s; */
+    /* animation: scale infinite 1s ease-in-out; */
+    animation: move infinite 2s linear;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-moon {
+    /* animation: App-logo-spin infinite 20s linear; */
+    /* animation: App-logo-spin infinite 1s, App-logo-grow infinite 1s; */
+    animation: moonSpin infinite 3s linear;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-moon-container {
+    /* animation: App-logo-spin infinite 20s linear; */
+    /* animation: App-logo-spin infinite 1s, App-logo-grow infinite 1s; */
+    animation: moonMove infinite 3s linear;
+  }
+}
+
+@keyframes moonSpin {
+  0% { 
     transform: rotate(0deg);
   }
+  25% { 
+    transform: rotate(45deg);
+  }
+  50% { 
+    transform: rotate(0deg);
+  }
+  75% { 
+      transform: rotate(-45deg);
+  } 
+}
+
+@keyframes moonMove {
+  25% {
+    transform: translate(5vw, -2vw);
+    /* transform: translateY(-2vw); */
+  }
+  50% {
+    transform: translate(0vw, 0vw);
+    /* transform: translateY(0vw); */
+  }
+  75% {
+    transform: translate(-5vw, -2vw);
+    /* transform: translateY(-2vw); */
+  }
+  100% { 
+    transform: translate(0vw, 0vw);
+    /* transform: translateY(0vw); */
+  } 
+}
+
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg);
+  }
+  100% { 
+      transform: rotate(360deg);
+  } 
+}
+
+@keyframes scale {
+  90% {
+    transform: scale(1.5);
+  }
+  100% { 
+      transform: scale(1);
+  } 
+}
+
+@keyframes move {
+  25% {
+    transform: translateX(35vw);
+  }
+  50% {
+    transform: translateX(0vw);
+  }
+  75% {
+    transform: translateX(-35vw);
+  }
+  100% { 
+    transform: translateX(0vw);
+  } 
+}
+
+/* @keyframes spin { 
+  100% { 
+      transform: rotate(180deg);
+  } 
+}
+
+@keyframes scale {
+  100% {
+       transform: scale(2);
+  }
+} */
+
+@keyframes App-logo-spin {
+  /* from {
+    transform: rotate(0deg);
+  } 
   to {
     transform: rotate(360deg);
+  } */
+ 
+  /* 0% {
+    transform: rotate(0turn);
+  } */
+  100% {
+    transform: rotate(360deg);
   }
+}
+
+@keyframes App-logo-grow {
+  /* from { */
+    /* transform: rotate(0deg); */
+  /* } */
+  /* from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  } */
+  100% {
+    transform: scale(1.5);
+  }
+  /* 100% {
+    transform: scale(1);
+  } */
+  /* 29% {
+    transform: scale(1.5);
+  }
+  33% {
+    transform: scale(1);
+  }
+  62% {
+    transform: scale(1.5);
+  }
+  66% {
+    transform: scale(1);
+  }
+  95% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  } */
+
+  /* to { */
+    /* transform: scale(1); */
+    /* transform: scale(1); */
+    /* rotate: 360deg; */
+  /* } */
 }
